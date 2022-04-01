@@ -1,0 +1,90 @@
+<app-header></app-header>
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg mt-4">
+  <div class="container">
+    <h2 class="title-page">Shopping cart</h2>
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
+  <div class="container">
+    <div class="row">
+      <main class="col-md-9">
+        <div class="card">
+          <app-cart-item
+            class="table table-borderless table-shopping-cart"
+            (updateItems)="removeCartItem()"
+          ></app-cart-item>
+          <div class="card-body border-top">
+            <a routerLink="/product-list" class="btn btn-light">
+              <i class="fa fa-chevron-left"></i> Continue shopping
+            </a>
+          </div>
+        </div>
+        <!-- card.// -->
+
+        <div class="alert alert-success mt-3">
+          <p class="icontext">
+            <i class="icon text-success fa fa-truck"></i> Free Delivery within
+            1-2 weeks
+          </p>
+        </div>
+      </main>
+      <!-- col.// -->
+      <aside class="col-md-3">
+        <!-- card .// -->
+        <div class="card">
+          <div class="card-body">
+            <dl class="dlist-align">
+              <dt>Total price:</dt>
+              <dd class="text-right">{{ AlltotalAmount | currency: "EGP" }}</dd>
+            </dl>
+            <dl class="dlist-align">
+              <dt>{{ totalDiscount | currency: "EGP" }}</dt>
+            </dl>
+            <dl class="dlist-align">
+              <dt>Total:</dt>
+              <dd class="text-right h5">
+                <strong>{{
+                  AlltotalAmount - totalDiscount | currency: "EGP"
+                }}</strong>
+              </dd>
+            </dl>
+            <hr />
+            <p class="text-center mb-3">
+              <a routerLink="/payment" class="btn btn-primary float-md-right">
+                Make Purchase
+              </a>
+            </p>
+          </div>
+          <!-- card-body.// -->
+        </div>
+        <!-- card .// -->
+      </aside>
+      <!-- col.// -->
+    </div>
+  </div>
+  <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name bg padding-y">
+  <div class="container">
+    <h6>Payment and refund policy</h6>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non
+    </p>
+  </div>
+</section>
+
+<app-footer></app-footer>
